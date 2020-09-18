@@ -17,7 +17,7 @@ public extension NSAttributedString {
         return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(with attribute: StringAttribute, in range: Range) -> NSAttributedString {
+    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
     }
     
