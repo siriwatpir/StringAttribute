@@ -9,7 +9,7 @@
 import UIKit
 
 extension UISegmentedControl {
-    open func setTitleText(attributes: [StringAttribute], for state: UIControlState) {
+    open func setTitleText(attributes: [StringAttribute], for state: UIControl.State) {
         
         let titleTextAttributes = attributes
             .flatMap { $0.attributes }
@@ -19,6 +19,6 @@ extension UISegmentedControl {
                 return mutableDictionary
         }
         
-        setTitleTextAttributes(titleTextAttributes, for: state)
+        setTitleTextAttributes(titleTextAttributes as? [NSAttributedString.Key : Any], for: state)
     }
 }

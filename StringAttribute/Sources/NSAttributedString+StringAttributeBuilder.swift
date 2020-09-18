@@ -17,7 +17,7 @@ public extension NSAttributedString {
         return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
+    public func apply(with attribute: StringAttribute, in range: Range) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
     }
     
@@ -25,13 +25,13 @@ public extension NSAttributedString {
         return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
     }
     
-    public func apply(with attribute: StringAttribute, in range: CountableRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
-    }
-    
-    public func apply(with attributes: [StringAttribute], in range: CountableRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
-    }
+//    public func apply(with attribute: StringAttribute, in range: CountableRange<Int>) -> NSAttributedString {
+//        return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
+//    }
+//    
+//    public func apply(with attributes: [StringAttribute], in range: CountableRange<Int>) -> NSAttributedString {
+//        return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
+//    }
     
     public func apply(with attribute: StringAttribute, in range: ClosedRange<Int>) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
